@@ -19,14 +19,75 @@ exports.modules = {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/globals.css */ \"./styles/globals.css\");\n/* harmony import */ var _styles_globals_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_globals_css__WEBPACK_IMPORTED_MODULE_1__);\n\n\nfunction MyApp({ Component , pageProps  }) {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(Component, {\n        ...pageProps\n    }, void 0, false, {\n        fileName: \"/Users/admin/Documents/pikyproject/pippleNetwork/front/pages/_app.tsx\",\n        lineNumber: 5,\n        columnNumber: 10\n    }, this);\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyApp);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9fYXBwLnRzeC5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUFBO0FBQThCO0FBRzlCLFNBQVNBLEtBQUssQ0FBQyxFQUFFQyxTQUFTLEdBQUVDLFNBQVMsR0FBWSxFQUFFO0lBQ2pELHFCQUFPLDhEQUFDRCxTQUFTO1FBQUUsR0FBR0MsU0FBUzs7Ozs7WUFBSTtDQUNwQztBQUVELGlFQUFlRixLQUFLIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vZnJvbnQvLi9wYWdlcy9fYXBwLnRzeD8yZmJlIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAnLi4vc3R5bGVzL2dsb2JhbHMuY3NzJ1xuaW1wb3J0IHR5cGUgeyBBcHBQcm9wcyB9IGZyb20gJ25leHQvYXBwJ1xuXG5mdW5jdGlvbiBNeUFwcCh7IENvbXBvbmVudCwgcGFnZVByb3BzIH06IEFwcFByb3BzKSB7XG4gIHJldHVybiA8Q29tcG9uZW50IHsuLi5wYWdlUHJvcHN9IC8+XG59XG5cbmV4cG9ydCBkZWZhdWx0IE15QXBwXG4iXSwibmFtZXMiOlsiTXlBcHAiLCJDb21wb25lbnQiLCJwYWdlUHJvcHMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./pages/_app.tsx\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_assets_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/assets/css/bootstrap.min.css */ \"./styles/assets/css/bootstrap.min.css\");\n/* harmony import */ var _styles_assets_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_assets_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _styles_assets_css_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/assets/css/style.css */ \"./styles/assets/css/style.css\");\n/* harmony import */ var _styles_assets_css_style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_assets_css_style_css__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _styles_assets_css_buttonstyle_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/assets/css/buttonstyle.css */ \"./styles/assets/css/buttonstyle.css\");\n/* harmony import */ var _styles_assets_css_buttonstyle_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_assets_css_buttonstyle_css__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _styles_assets_css_responsive_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/assets/css/responsive.css */ \"./styles/assets/css/responsive.css\");\n/* harmony import */ var _styles_assets_css_responsive_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_styles_assets_css_responsive_css__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _styles_assets_css_flickity_min_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/assets/css/flickity.min.css */ \"./styles/assets/css/flickity.min.css\");\n/* harmony import */ var _styles_assets_css_flickity_min_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_assets_css_flickity_min_css__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _styles_assets_css_owl_carousel_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles/assets/css/owl.carousel.css */ \"./styles/assets/css/owl.carousel.css\");\n/* harmony import */ var _styles_assets_css_owl_carousel_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_assets_css_owl_carousel_css__WEBPACK_IMPORTED_MODULE_6__);\n/* harmony import */ var _src_components_template__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../src/components/template */ \"./src/components/template.tsx\");\n\n\n\n\n\n\n\n\nfunction MyApp({ Component , pageProps  }) {\n    //include all your layout component here e.g header, or footer\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_src_components_template__WEBPACK_IMPORTED_MODULE_7__[\"default\"], {\n            children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(Component, {\n                ...pageProps\n            }, void 0, false, {\n                fileName: \"/Users/admin/Documents/pikyproject/qlikr/front/pages/_app.tsx\",\n                lineNumber: 20,\n                columnNumber: 3\n            }, this)\n        }, void 0, false, {\n            fileName: \"/Users/admin/Documents/pikyproject/qlikr/front/pages/_app.tsx\",\n            lineNumber: 18,\n            columnNumber: 3\n        }, this)\n    }, void 0, false);\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyApp);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9fYXBwLnRzeC5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQ0E7QUFBK0M7QUFDUjtBQUNNO0FBQ0Q7QUFDRTtBQUNBO0FBSUc7QUFFakQsU0FBU0MsS0FBSyxDQUFDLEVBQUVDLFNBQVMsR0FBRUMsU0FBUyxHQUFZLEVBQUU7SUFFakQsOERBQThEO0lBQzlELHFCQUNBO2tCQUNBLDRFQUFDSCxnRUFBUTtzQkFFVCw0RUFBQ0UsU0FBUztnQkFBRSxHQUFHQyxTQUFTOzs7OztvQkFBSTs7Ozs7Z0JBRWpCO3FCQUdSLENBQ0Y7Q0FDRjtBQUVELGlFQUFlRixLQUFLIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vZnJvbnQvLi9wYWdlcy9fYXBwLnRzeD8yZmJlIl0sInNvdXJjZXNDb250ZW50IjpbIlxuaW1wb3J0ICcuLi9zdHlsZXMvYXNzZXRzL2Nzcy9ib290c3RyYXAubWluLmNzcydcbmltcG9ydCAnLi4vc3R5bGVzL2Fzc2V0cy9jc3Mvc3R5bGUuY3NzJ1xuaW1wb3J0ICcuLi9zdHlsZXMvYXNzZXRzL2Nzcy9idXR0b25zdHlsZS5jc3MnXG5pbXBvcnQgJy4uL3N0eWxlcy9hc3NldHMvY3NzL3Jlc3BvbnNpdmUuY3NzJ1xuaW1wb3J0ICcuLi9zdHlsZXMvYXNzZXRzL2Nzcy9mbGlja2l0eS5taW4uY3NzJ1xuaW1wb3J0ICcuLi9zdHlsZXMvYXNzZXRzL2Nzcy9vd2wuY2Fyb3VzZWwuY3NzJ1xuXG5pbXBvcnQgdHlwZSB7IEFwcFByb3BzIH0gZnJvbSAnbmV4dC9hcHAnXG5pbXBvcnQgU2NyaXB0IGZyb20gJ25leHQvc2NyaXB0J1xuaW1wb3J0IFRlbXBsYXRlIGZyb20gJy4uL3NyYy9jb21wb25lbnRzL3RlbXBsYXRlJ1xuXG5mdW5jdGlvbiBNeUFwcCh7IENvbXBvbmVudCwgcGFnZVByb3BzIH06IEFwcFByb3BzKSB7XG5cbiAgLy9pbmNsdWRlIGFsbCB5b3VyIGxheW91dCBjb21wb25lbnQgaGVyZSBlLmcgaGVhZGVyLCBvciBmb290ZXJcbiAgcmV0dXJuIChcbiAgPD5cbiAgPFRlbXBsYXRlPlxuICBcbiAgPENvbXBvbmVudCB7Li4ucGFnZVByb3BzfSAvPlxuXG4gIDwvVGVtcGxhdGU+XG5cblxuICA8Lz5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBNeUFwcFxuIl0sIm5hbWVzIjpbIlRlbXBsYXRlIiwiTXlBcHAiLCJDb21wb25lbnQiLCJwYWdlUHJvcHMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./pages/_app.tsx\n");
 
 /***/ }),
 
-/***/ "./styles/globals.css":
-/*!****************************!*\
-  !*** ./styles/globals.css ***!
-  \****************************/
+/***/ "./src/components/template.tsx":
+/*!*************************************!*\
+  !*** ./src/components/template.tsx ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n\nconst Template = (props)=>{\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n        children: props.children\n    }, void 0, false);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Template);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29tcG9uZW50cy90ZW1wbGF0ZS50c3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBRUE7QUFBQSxNQUFPQSxRQUFRLEdBQUUsQ0FBQ0MsS0FBUyxHQUFJO0lBQzdCLHFCQUFRO2tCQUVMQSxLQUFLLENBQUNDLFFBQVE7cUJBQ1osQ0FDSjtDQUNGO0FBRUQsaUVBQWVGLFFBQVEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9mcm9udC8uL3NyYy9jb21wb25lbnRzL3RlbXBsYXRlLnRzeD9iNGQ0Il0sInNvdXJjZXNDb250ZW50IjpbIlxuXG5jb25zdCAgVGVtcGxhdGUgPShwcm9wczphbnkpPT4ge1xuICByZXR1cm4gKDw+XG5cbiAgICB7cHJvcHMuY2hpbGRyZW59XG4gICAgPC8+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgVGVtcGxhdGUiXSwibmFtZXMiOlsiVGVtcGxhdGUiLCJwcm9wcyIsImNoaWxkcmVuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/components/template.tsx\n");
+
+/***/ }),
+
+/***/ "./styles/assets/css/bootstrap.min.css":
+/*!*********************************************!*\
+  !*** ./styles/assets/css/bootstrap.min.css ***!
+  \*********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./styles/assets/css/buttonstyle.css":
+/*!*******************************************!*\
+  !*** ./styles/assets/css/buttonstyle.css ***!
+  \*******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./styles/assets/css/flickity.min.css":
+/*!********************************************!*\
+  !*** ./styles/assets/css/flickity.min.css ***!
+  \********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./styles/assets/css/owl.carousel.css":
+/*!********************************************!*\
+  !*** ./styles/assets/css/owl.carousel.css ***!
+  \********************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./styles/assets/css/responsive.css":
+/*!******************************************!*\
+  !*** ./styles/assets/css/responsive.css ***!
+  \******************************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
+/***/ "./styles/assets/css/style.css":
+/*!*************************************!*\
+  !*** ./styles/assets/css/style.css ***!
+  \*************************************/
 /***/ (() => {
 
 
