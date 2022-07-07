@@ -6,6 +6,7 @@ import '../styles/assets/css/responsive.css'
 import '../styles/assets/css/flickity.min.css'
 import '../styles/assets/css/owl.carousel.css'
 
+import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Script from 'next/script'
 import Template from '../src/components/template'

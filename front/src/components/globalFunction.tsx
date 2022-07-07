@@ -1,18 +1,64 @@
-import axios from "axios";
-import Cookies from 'js-cookie'
+
 
 const config = {
     headers: { 
         'content-type': 'application/json'
     }
 } 
-/* export const globalId =()=>{
-   if (Cookies.get("gsntk") === undefined) {
-      // generateAccessToken()
+
+
+
+
+
+export const getDateTime =()=>{
+    var date = new Date();
+            var day:any = date.getDate();
+            var month:any = date.getMonth() + 1;
+            var year = date.getFullYear();
+            
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+            
+            var today = year + "-" + month + "-" + day; 
+  
+            return (today+' '+new Date().toLocaleTimeString()).slice(0,19);
   }
-return Cookies.get("gsntk")
-}
- */
+
+export const timeSince=(date:any) =>{
+
+    var tdate:any = new Date();
+    var seconds = Math.floor((tdate - date) / 1000);
+  
+    var interval = seconds / 31536000;
+    if (interval > 1) {
+     // return date.toISOString().slice(0,10)
+      return Math.floor(interval) + " years ago";
+    }
+    interval = seconds / 2592000;
+    if (interval > 1) {
+      //return date.toISOString().slice(0,10)
+      return Math.floor(interval) + " months ago";
+    }
+    interval = seconds / 86400;
+    if (interval > 1) {
+      
+      //return date.toISOString().slice(0,10)
+      return Math.floor(interval) + " days ago";
+    }
+    interval = seconds / 3600;
+    if (interval > 1) {
+      return Math.floor(interval) + " hours ago";
+    }
+    interval = seconds / 60;
+    if (interval > 1) {
+      return Math.floor(interval) + " minutes ago";
+    }
+    return Math.floor(seconds) + " seconds ago";
+  }
+
+
+
+
 export function htmlEntities(str:any) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
@@ -83,20 +129,6 @@ export const getBritishDate=(dateString:any)=>{
 }
 
 
-    const generateAccessToken =()=>{ 
-        let uid = 'BSN'+Math.random().toString(36).substr(2,9)
- var fd = {    
-    user_login:uid 
-}
-    let url = 'https://api.bsnsports.com.ng/get_front_token/tbl_token';
-		axios.post(url, fd, config)
-		.then((response:any) =>{
-		 	if(response.data.type ==='success'){
-		 var inFivHour = new Date(new Date().getTime() + 119 * 300 * 1000);
-		Cookies.set('gsntk', response.data.jwt,  {expires: inFivHour }) 
-             }  
-		}) 
-	}
 
     export const shortText = function(text:string, limit:number){
         if (text.length > limit){

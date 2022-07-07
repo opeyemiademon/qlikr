@@ -13,8 +13,6 @@ import TrendingStory from '../src/sections/trendingStory'
 const Home: NextPage = () => {
   return (<>
   
-{/* 
-<Loader /> */}
 
 	<section className="home">
 		<div className="mobile-area startpage">

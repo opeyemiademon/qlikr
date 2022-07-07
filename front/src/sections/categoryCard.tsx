@@ -1,92 +1,91 @@
-import React from 'react'
-import { imagesUrl } from '../components/Includes'
+import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { config, imagesUrl, serverUrl, siteUrl } from '../components/Includes';
+import axios from 'axios';
+import { shortText, timeSince } from '../components/globalFunction';
 
 const CategoryCard =()=> {
+
+
+	const [loading, setLoading] = useState({
+		isDatafetching:false,
+		isLoading:false
+	});
+	const [content, setContent] = useState([] as any);
+	let [limit, setLimit] = useState(6);
+
+	
+	const getColor=()=>{
+		return `#${Math.floor(Math.random()* 0xffffff).toString(16)}`
+	 }
+
+const fetchPost =  async()=>{
+
+	
+	var sql ="Select count(p.ID) as total, c.name, c.slug, c.avatar from tbl_posts p join tbl_category c on c.code=p.post_category and p.post_status ='Published' group by p.post_category order by p.view_count ASC limit 3"
+	
+
+	var fd = {    
+	sql:sql
+	}
+	
+	setLoading({...loading, isDatafetching:true})
+	
+	let url = serverUrl+'/carelessfetch'
+	await axios.post(url, fd, config)
+	  .then(response =>{
+	  if(response.data.length!==0 && Array.isArray(response.data)){
+			 setContent(response.data)
+			}else{
+		setContent([])
+				  } 
+	}).finally(()=>{
+	
+	setLoading({...loading, isDatafetching:false})
+			 }) 
+	
+		}
+		interface slides {
+			total: string,
+			slug:string,
+			name:string, 
+			avatar:string,
+		}
+
+
+		useEffect(()=>{
+		fetchPost()
+		  }, [])
+
+
+
+
   return (
    <>
-   
    
    <div className="home-cat-content">
 							<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12  col-xl-12">
 								<h6>Categories
-									<span className="see-all btn-color-change color-change"><a href="categories.html">SEE ALL</a></span>
+									<span className="see-all btn-color-change color-change"><Link href="/categories"><a >SEE ALL</a></Link></span>
 								</h6>
 							</div>
 						</div>
 
-
-
-						<div className="home-cat-slider slider-cat">
-						<div className="carousel trending-carousel"
-            				data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false }'>
-								<div className="carousel-cell">
-									<a href="articles-list.html"  title="">
-										<div className="list-area travel-article">
-											<img src={imagesUrl+"/character1.svg"} className="img-fluid" alt="" title="" />
+						<div className="trending-carousels cat-wrapper">
+							
+							{content.length!==0?content.map((item:slides, id:number)=><div key={id} className="carousel-cell" >
+							<Link href={"/articles-list?s="+item.slug}><a title="">
+										<div className="list-area " style={{ backgroundColor:getColor(), opacity:0.8 }}>
+											<img src={imagesUrl+"/category/"+item.avatar}  className="img-fluid" alt="" title="" />
 											<div className="home-c-content">
-												<p>Travel</p>
-												<p className="articles-count">172 Articles</p>
+											<p className='text-white'>{shortText(item.name, 10)}</p>
+											<p className="articles-count text-white">{item.total} Articles</p>
 											</div>										
 										</div>
-									</a>
-								</div>
-								<div className="carousel-cell">
-									<a href="articles-list.html"  title="">
-										<div className="list-area lifestyle-art">
-											<img src={imagesUrl+"/character2.svg"} className="img-fluid" alt="" title="" />
-											<div className="home-c-content">
-												<p>Lifestyle</p>
-												<p className="articles-count">120 Articles</p>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div className="carousel-cell">
-									<a href="articles-list.html"  title="">
-										<div className="list-area fitness-art">
-											<img src={imagesUrl+"/character3.svg"}className="img-fluid" alt="" title="" />
-											<div className="home-c-content">
-												<p>Fitness</p>
-												<p className="articles-count">243 Articles</p>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div className="carousel-cell">
-									<a href="articles-list.html"  title="">
-										<div className="list-area education-art">
-										<img src={imagesUrl+"/character4.svg"} className="img-fluid" alt="" title="" />
-											<div className="home-c-content">
-												<p>Education</p>
-												<p className="articles-count">265 Articles</p>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div className="carousel-cell">
-									<a href="articles-list.html"  title="">
-										<div className="list-area sports-art">
-											<img src={imagesUrl+"/character3.svg"} className="img-fluid" alt="" title="" />
-											<div className="home-c-content">
-												<p>Sports</p>
-												<p className="articles-count">56 Articles</p>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div className="carousel-cell">
-									<a href="articles-list.html"  title="">
-										<div className="list-area techology-art">
-											<img src={imagesUrl+"/character3.svg"}className="img-fluid" alt="" title="" />
-											<div className="home-c-content">
-												<p>Techology</p>
-												<p className="articles-count">85 Articles</p>
-											</div>
-										</div>
-									</a>
-								</div>
+									</a></Link>
+									</div>):''}
+
 							</div>
-						</div>
    </>
   )
 }
