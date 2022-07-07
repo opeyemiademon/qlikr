@@ -9,15 +9,17 @@ const Header =()=> {
 								<img style={{width:'60px'}} src={imagesUrl+"/logo-pipple.png"}  className="light-mode-logo" alt="" title="" />
 								<img  src={imagesUrl+"/logo2.svg"} className="dark-mode-logo" alt="" title="" />
 							</div>
+
+
 							<div className="center moon-search">
-								<form action="search-page.html">
+								<form action="#">
 									<div className="input-group" id="search-page">
 										<div className="input-group-prepend border-0">
 											<button id="button-add" type="button" className="btn btn-link text-info">
 												<span className="icon-search"></span>
 											</button>
 										</div>
-										<input type="search" placeholder="Search" aria-describedby="button-addon4" className="form-control search-page bg-none border-0" />
+										<input type="search" placeholder="Search" aria-describedby="button-addon4" onChange={()=>window.location.href='/search'} className="form-control search-page bg-none border-0" />
 									</div>
 								</form>
 							</div>

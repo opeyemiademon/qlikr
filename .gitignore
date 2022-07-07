@@ -1,3 +1,7 @@
 /front/node_modules
 /front/build
 /front/build.zip
+
+/backend/node_modules
+/backend/build
+/backend/build.zip

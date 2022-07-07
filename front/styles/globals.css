@@ -77,3 +77,26 @@ background-color: aqua;
   flex-direction: row;
   justify-content: space-between;
 }
+
+.h50{
+  height: 70px;
+}
+
+
+@media (max-width: 480px){
+
+  .bg-image-wrapper{
+
+    height: 300px;
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    
+    background-size: cover;
+    object-fit: cover;
+    position: relative;
+    background-position: center center;
+  
+  }
+}

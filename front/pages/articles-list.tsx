@@ -5,6 +5,7 @@ import { config, imagesUrl, serverUrl, siteUrl } from '../src/components/Include
 import axios from 'axios';
 import { shortText, timeSince } from '../src/components/globalFunction';
 import Loader from '../src/components/loader';
+import Footer from '../src/components/footer';
 
 const ArticlesList =()=> {
 
@@ -78,7 +79,7 @@ const fetchPost =  async(limit:number)=>{
 		  }, [])
 		  
 
-  return (
+  return (<>
     <section className ="home article-page-list">
 		{loading.isDatafetching?<Loader/>:''}
 		<div className ="mobile-area startpage">
@@ -149,7 +150,11 @@ const fetchPost =  async(limit:number)=>{
 				</div>
 			</div>		
 		</div>
+		
 	</section>
+	<div className="h50"></div>
+	<Footer />
+	</>
   )
 }
 

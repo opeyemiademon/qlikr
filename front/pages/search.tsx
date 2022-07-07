@@ -1,32 +1,93 @@
-import React from 'react'
-import { imagesUrl } from '../src/components/Includes'
+import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { config, imagesUrl, serverUrl, siteUrl } from '../src/components/Includes';
+import axios from 'axios';
+import { shortText, timeSince } from '../src/components/globalFunction';
+import SearchIt from '../src/sections/search';
+import Loader from '../src/components/loader';
 
 const Search =()=> {
+
+    const [query, setQuery] = useState('');
+	const [loading, setLoading] = useState({
+		isDatafetching:false,
+		isLoading:false
+	});
+	const [content, setContent] = useState([] as any);
+	let [limit, setLimit] = useState(6);
+
+	const nextPage = (num:number)=>{
+		setLimit(num)
+		fetchPost(num, query)
+	  }
+
+      const fetchPost =  async(limit:number, queryString:string)=>{
+	   
+        var sql ="Select   distinct p.code, p.post_title, p.post_content, u.user_url, p.post_excerpt, p.post_image, p.view_count, p.post_date, p.post_slug, u.display_name as post_autor, c.name as post_category from tbl_posts p, tbl_users u, tbl_category c where u.user_code = p.post_author and c.code=p.post_category and p.post_status ='Published' and p.post_title  Like '%"+queryString+"%'  ";
+    
+        sql = sql+" order by p.ID DESC  LIMIT "+limit
+        setQuery(queryString)
+    var fd = {    
+    sql:sql
+    }
+    
+    setLoading({...loading, isDatafetching:true})
+    let url = serverUrl+'/carelessfetch'
+    await axios.post(url, fd, config)
+        .then(response =>{
+  
+              if(response.data.length!==0 && Array.isArray(response.data)){
+               setContent(response.data)
+              }else{
+                setContent([])
+                    } 
+      }).finally(()=>{
+  
+        setLoading({...loading, isDatafetching:false})
+                 }) 
+    
+                }
+
+
+useEffect(()=>{
+    
+
+    if (typeof window !== undefined) {
+        let   queryString = new URLSearchParams(window.location.search).get("q") as string
+        
+        fetchPost(6, queryString)
+
+            }
+            
+        }, [])
+
+
+                        interface slides {
+                            post_title: string,
+                            subtitle:string,
+                            post_autor:string, 
+                            post_date:string, 
+                            post_image:string,
+                            post_slug:string,
+                            post_category:string,
+                            post_content:string,
+                            user_url:string,
+                        }
+    
   return (
     <section className="home">
         <div className="mobile-area startpage">
             <div className="main-page">
                 <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-
+                {loading.isDatafetching?<Loader />:''}
                     <div className="page-header">
                         <div className = "navbar-inner">
                             <div className = "left back-page">
-                                <a href="categories.html">
+                                <a href="/categories">
                                     <span className="icon-arrow-big2"></span>
                                 </a>
                             </div>
-                            <div className="center moon-search">
-                                <form action="#">
-                                    <div className="input-group border rounded-pill">
-                                        <div className="input-group-prepend border-0">
-                                            <button id="button-add" type="button" className="btn btn-link text-info">
-                                                <span className="icon-search"></span>
-                                            </button>
-                                        </div>
-                                        <input type="search" placeholder="Search" aria-describedby="button-addon4" className="form-control bg-none border-0" />
-                                    </div>
-                                </form>
-                            </div>
+                         <SearchIt />
 
                             <div className = "right moon-icon">
                                 <span className="icon-day-night-icon"></span>
@@ -39,7 +100,7 @@ const Search =()=> {
                         <ul>
                             <li className="nav-item ">
                               <div className="cat-content">
-                                    <a href="story-news.html" className="active" title="" target="">
+                                    <a href="/story-news" className="active" title="" target="">
                                         <span className="cat-icon">
                                             <span className="icon icon-all-news"></span>
                                         </span>
@@ -49,7 +110,7 @@ const Search =()=> {
                             </li>
                            <li className="nav-item ">
                               <div className="cat-content">
-                                   <a href="story-news.html" className="" title="" target="">
+                                   <a href="#" className="" title="" target="">
                                         <span className="cat-icon">
                                             <span className="icon icon-trending-white"></span>
                                         </span>
@@ -59,7 +120,7 @@ const Search =()=> {
                             </li>
                             <li className="nav-item ">
                               <div className="cat-content">
-                                    <a href="startpage-1.html" className="" title="" target="">
+                                    <a href="#" className="" title="" target="">
                                         <span className="cat-icon">
                                             <span className="icon icon-latest"></span>
                                         </span>
@@ -69,7 +130,7 @@ const Search =()=> {
                             </li>
                             <li className="nav-item ">
                               <div className="cat-content">
-                                    <a href="live-event-report.html" className="" title="" target="">
+                                    <a href="#" className="" title="" target="">
                                         <span className="cat-icon">
                                             <span className="icon icon-unread"></span>
                                         </span>
@@ -79,7 +140,7 @@ const Search =()=> {
                             </li>
                             <li className="nav-item ">
                               <div className="cat-content">
-                                   <a href="live-event-report.html" className="" title="" target="">
+                                   <a href="#" className="" title="" target="">
                                         <span className="cat-icon">
                                             <span className="icon icon-trending-white"></span>
                                         </span>
@@ -89,7 +150,7 @@ const Search =()=> {
                             </li>
                             <li className="nav-item ">
                               <div className="cat-content">
-                                    <a href="startpage-1.html" className="" title="" target="">
+                                    <a href="#" className="" title="" target="">
                                         <span className="cat-icon">
                                             <span className="icon icon-latest"></span>
                                         </span>
@@ -143,80 +204,46 @@ const Search =()=> {
 
                        <div className="cat-block-1">
                         <div className="home-cat-content">
-                              <h6>All Categories  </h6>
+                              <h6>Search Result ({query})</h6>
                         </div>
-                        <div className="home-cat-slider slider-cat">
-                        <div className="carousel trending-carousel"
-                            data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false }'>
-                                <div className="carousel-cell">
-                                    <div className="list-area travel-article">
-                                        <a href="categories.html"  title="">
-                                            <img src={imagesUrl+"/character1.svg"}  className="img-fluid" alt="" title="" />
-                                            <div className="home-c-content">
-                                                <p>Travel</p>
-                                                <p className="articles-count">172 Articles</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="carousel-cell">
-                                    <div className="list-area lifestyle-art">
-                                        <a href="categories.html"  title="">
-                                            <img  src={imagesUrl+"/character2.svg"} className="img-fluid" alt="" title="" />
-                                            <div className="home-c-content">
-                                                <p>Lifestyle</p>
-                                                <p className="articles-count">120 Articles</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="carousel-cell">
-                                    <div className="list-area fitness-art">
-                                        <a href="categories.html"  title="">
-                                            <img  src={imagesUrl+"/character3.svg"} className="img-fluid" alt="" title="" />
-                                            <div className="home-c-content">
-                                                <p>Fitness</p>
-                                                <p className="articles-count">243 Articles</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="carousel-cell">
-                                    <div className="list-area education-art">
-                                        <a href="categories.html"  title="">
-                                            <img src={imagesUrl+"/character4.svg"} className="img-fluid" alt="" title="" />
-                                            <div className="home-c-content">
-                                                <p>Education</p>
-                                                <p className="articles-count">265 Articles</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="carousel-cell">
-                                    <div className="list-area sports-art">
-                                        <a href="categories.html"  title="">
-                                            <img src={imagesUrl+"/character5.svg"} className="img-fluid" alt="" title="" />
-                                            <div className="home-c-content">
-                                                <p>Sports</p>
-                                                <p className="articles-count">56 Articles</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="carousel-cell">
-                                    <div className="list-area techology-art">
-                                        <a href="categories.html"  title="">
-                                            <img src={imagesUrl+"/character3.svg"} className="img-fluid" alt="" title="" />
-                                            <div className="home-c-content">
-                                                <p>Techology</p>
-                                                <p className="articles-count">85 Articles</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+                        <div className ="lifestyle-wrap categories-block">
+								
+							{content.length!==0?content.map((item:slides, id:number)=>	<div key={id} className ="post-wraper">
+									<div className ="post-thumb" >
+									<Link href={siteUrl+"/articles/"+item.post_slug}><a >
+											<img src={imagesUrl+"/post/"+item.post_image} className="post-image"  alt="" title="" />    
+										</a></Link>
+									</div>
+									<div className ="post-text-outer">
+										<div className ="post-user-info">
+										<Link href={siteUrl+"/articles/"+item.post_slug}><a>
+												<div className ="life-txt">
+													<h3>{item.post_category.toUpperCase()}</h3>
+													<h2>{shortText(item.post_title, 50)}</h2>
+													<div className ="life-icon">
+														<h3 className ="art-content">
+															<span className ="author-area">
+																<img src={imagesUrl+"/users/"+item.user_url} alt="" title="" className='img-profile' /> 
+															</span>
+															<span>{item.post_autor}</span> 
+															<span className ="lifetime">{timeSince(new Date(item.post_date))}</span>  
+														</h3>
+													</div>  
+												</div>
+											</a></Link>
+										</div>
+									</div>
+								</div>):''}
+							</div>
 
-                            </div>
-                        </div>
+                            <div className ="col-xl-12 col-md-12">
+				<div className ="all-box-area" id="lt">
+					<div className ="load-more-btn">
+						<a href="#lt"  className ="loadMore" title="" onClick={()=>nextPage(limit+6)}>Load More</a>
+					</div>
+				</div>
+			</div>
+            
                     </div>
                 </div>
             </div>
