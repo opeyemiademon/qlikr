@@ -5,3 +5,7 @@
 /backend/node_modules
 /backend/build
 /backend/build.zip
+
+/admin/node_modules
+/admin/build
+/admin/build.zip

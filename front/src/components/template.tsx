@@ -1,10 +1,10 @@
 
 
 const  Template =(props:any)=> {
-  return (<>
+  return (<div suppressHydrationWarning>
 
     {props.children}
-    </>
+    </div>
   )
 }
 
