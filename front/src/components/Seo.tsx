@@ -30,11 +30,11 @@ const Seo =({ description, title, keywords, imageLink, siteUrl }: seoInterface )
       <meta property="twitter:description" content={description} />
 
 
-    <link rel="shortcut icon" href="/favicon.jpeg" type="image/x-icon" />
+    <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
     <meta property="twitter:url" content={siteUrl}/> 
     <meta property="twitter:image" content={imageLink} /> 
-    <meta name="author" content="Niyi Busari" />
-    <meta property="og:publisher" content="Niyi Busari"/>
+    <meta name="author" content="GoIntell" />
+    <meta property="og:publisher" content="GoIntell"/>
 
     </Head>
   )

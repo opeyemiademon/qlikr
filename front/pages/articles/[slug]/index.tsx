@@ -151,27 +151,27 @@ const Index =({content}:any)=> {
                     <div className="story-social-icon">
                         <ul>
                             <li>
-                                <a href={"https://www.facebook.com/sharer/sharer.php?u="+siteUrl+"/articles/"+item.post_slug} target="_blank" title="facebook">
+                                <a href={"https://www.facebook.com/sharer/sharer.php?u="+siteUrl+"/articles/"+item.post_slug} rel="noreferrer" target="_blank" title="facebook">
                                     <span className="icon-facebook2"><span className="path1"></span><span className="path2"></span></span>
                                 </a>
                             </li>
                             <li>
-                                <a href={"http://www.twitter.com/intent/tweet?text="+siteUrl+"/articles/"+item.post_slug} target="_blank" title="twitter">
+                                <a href={"http://www.twitter.com/intent/tweet?text="+siteUrl+"/articles/"+item.post_slug} rel="noreferrer" target="_blank" title="twitter">
                                     <span className="icon-twitter2"><span className="path1"></span><span className="path2"></span></span>
                                 </a>
                             </li>
                             <li>
-                                <a href={"https://www.linkedin.com/sharing/share-offsite/?url="+siteUrl+"/articles/"+item.post_slug} target="_blank" title="linkedin">
+                                <a href={"https://www.linkedin.com/sharing/share-offsite/?url="+siteUrl+"/articles/"+item.post_slug} rel="noreferrer" target="_blank" title="linkedin">
                                     <span className="icon-linkedin"><span className="path1"></span><span className="path2"></span><span className="path3"></span><span className="path4"></span><span className="path5"></span></span>
                                 </a>
                             </li>
                             <li>
-                                <a  href={"https://wa.me/?text="+siteUrl+"/articles/"+item.post_slug} target="_blank" title="whatsapp">
+                                <a  href={"https://wa.me/?text="+siteUrl+"/articles/"+item.post_slug} target="_blank" rel="noreferrer" title="whatsapp">
                                     <span className="icon-whatsapp"><span className="path1"></span><span className="path2"></span><span className="path3"></span><span className="path4"></span><span className="path5"></span></span>
                                 </a>
                             </li>
                             <li>
-                                <a href={"https://telegram.me/share/url?url="+siteUrl+"/articles/"+item.post_slug} target="_blank" title="mail">
+                                <a href={"https://telegram.me/share/url?url="+siteUrl+"/articles/"+item.post_slug} target="_blank" rel="noreferrer" title="mail">
                                     <span className="icon-mail"><span className="path1"></span><span className="path2"></span></span>
                                 </a>
                             </li>

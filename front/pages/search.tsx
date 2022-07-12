@@ -83,9 +83,9 @@ useEffect(()=>{
                     <div className="page-header">
                         <div className = "navbar-inner">
                             <div className = "left back-page">
-                                <a href="/categories">
+                              <Link href="/categories"><a>
                                     <span className="icon-arrow-big2"></span>
-                                </a>
+                                </a></Link>
                             </div>
                          <SearchIt />
 

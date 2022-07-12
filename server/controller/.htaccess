@@ -1,0 +1,16 @@
+RewriteEngine On
+#RewriteCond %{HTTPS} off
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC]
+RewriteRule ^(.*)\.html$ $1.php [NC] 
+RewriteRule ^fetchField/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+) fetchField.php?tablename=$1&column=$2&field=$3&data=$4 [NC]
+RewriteRule ^fetch_controller/([0-9a-zA-Z_-]+) fetch_controller.php?tablename=$1 [NC]
+RewriteRule ^update_controller/([0-9a-zA-Z_-]+) update_controller.php?tablename=$1 [NC]
+RewriteRule ^save_controller/([0-9a-zA-Z_-]+) save_controller.php?tablename=$1 [NC]
+RewriteRule ^delete_controller/([0-9a-zA-Z_-]+) delete_controller.php?tablename=$1 [NC]
+RewriteRule ^updateCustom_controller/([0-9a-zA-Z_-]+) updateCustom_controller.php?tablename=$1 [NC]
+RewriteRule ^existence_controller/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+) existence_controller.php?tablename=$1&column=$2 [NC]
+RewriteRule ^csvSample_controller/([0-9a-zA-Z_-]+) csvSample_controller.php?tablename=$1 [NC]
+RewriteRule ^updateById_controller/([0-9a-zA-Z_-]+) updateById_controller.php?tablename=$1 [NC]
+RewriteRule ^fetchCount_controller/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+) fetchCount_controller.php?tablename=$1&token=$2 [NC]

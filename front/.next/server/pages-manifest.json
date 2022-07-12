@@ -1,5 +1,25 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js"
+  "/_document": "pages/_document.js",
+  "/api/hello": "pages/api/hello.js",
+  "/articles-list": "pages/articles-list.html",
+  "/build-feed": "pages/build-feed.html",
+  "/categories": "pages/categories.html",
+  "/contact": "pages/contact.html",
+  "/forgot-password": "pages/forgot-password.html",
+  "/": "pages/index.html",
+  "/language": "pages/language.html",
+  "/live-event": "pages/live-event.html",
+  "/login": "pages/login.html",
+  "/notifications": "pages/notifications.html",
+  "/register": "pages/register.html",
+  "/search": "pages/search.html",
+  "/select-interest": "pages/select-interest.html",
+  "/settings": "pages/settings.html",
+  "/video-list": "pages/video-list.html",
+  "/walkthrough": "pages/walkthrough.html",
+  "/videos": "pages/videos.html",
+  "/articles/[slug]": "pages/articles/[slug].js",
+  "/404": "pages/404.html"
 }

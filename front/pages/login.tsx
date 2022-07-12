@@ -39,10 +39,10 @@ const Login=()=> {
 											<div className="signin-up or-text">or</div>
 										</div>
 										<div className="login-social-icon">
-											<a href="https://www.facebook.com/" className="link" target="_blank">
+											<a href="https://www.facebook.com/" className="link" rel="noreferrer" target="_blank">
 												<span className="icon-facebook"><span className="path1"></span><span className="path2"></span></span>
 											</a>
-											<a href="https://accounts.google.com/" className="link" target="_blank">
+											<a href="https://accounts.google.com/" className="link" rel="noreferrer" target="_blank">
 												<span className="icon-google"><span className="path1"></span><span className="path2"></span><span className="path3"></span><span className="path4"></span></span>
 											</a>
 										</div>

@@ -202,6 +202,7 @@ fd.append('fullDescription', String(quill?.root.innerHTML));
  let url = ServerUrl+'/save_controller/tbl_new_post';
       axios.post(url, fd, config)
       .then(response =>{
+        console.log(response.data)
         if(response.data.type === 'success'){
 
           SuccessModal()

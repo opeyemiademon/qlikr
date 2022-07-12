@@ -6,8 +6,8 @@ const Header =()=> {
 					<div className="page-header">
 						<div className = "navbar-inner">
 							<div className = "left">
-								<img style={{width:'60px'}} src={imagesUrl+"/logo-pipple.png"}  className="light-mode-logo" alt="" title="" />
-								<img  src={imagesUrl+"/logo2.svg"} className="dark-mode-logo" alt="" title="" />
+								<img style={{width:'60px'}} src={imagesUrl+"/logo.png"}  className="light-mode-logo" alt="" title="" />
+								{/* <img  src={imagesUrl+"/logo.png"} className="dark-mode-logo" alt="" title="" /> */}
 							</div>
 
 

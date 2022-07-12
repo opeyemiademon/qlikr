@@ -6,6 +6,7 @@ import axios from 'axios';
 import { shortText, timeSince } from '../src/components/globalFunction';
 import Loader from '../src/components/loader';
 import Footer from '../src/components/footer';
+import Seo from '../src/components/Seo';
 
 const ArticlesList =()=> {
 
@@ -80,6 +81,17 @@ const fetchPost =  async(limit:number)=>{
 		  
 
   return (<>
+
+<Seo
+
+title='Qlikr News'
+description='Technology Blog'
+keywords= ''
+imageLink={imagesUrl+'/logo.png'}
+siteUrl ={siteUrl}
+
+
+/>
     <section className ="home article-page-list">
 		{loading.isDatafetching?<Loader/>:''}
 		<div className ="mobile-area startpage">
@@ -90,7 +102,7 @@ const fetchPost =  async(limit:number)=>{
 						<div className = "navbar-inner">
 
 							<div className = "left back-page" data-aos="fade-up">
-							<Link href="/"><a href="/">
+							<Link href="/"><a>
 									<span className ="icon-arrow-big2"></span>
 								</a></Link>
 							</div>
